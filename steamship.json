@@ -1,0 +1,61 @@
+{
+	"type": "plugin",
+	"handle": "coquidev",
+	"version": "0.0.1",
+	"description": "",
+	"author": "mpoikkilehto",
+	"entrypoint": "Unused",
+	"public": false,
+	"plugin": {
+		"isTrainable": false,
+		"transport": "jsonOverHttp",
+		"type": "generator",
+		"streaming": true
+	},
+	"build_config": {
+		"ignore": [
+			"tests",
+			"examples"
+		]
+	},
+	"configTemplate": {
+		"coqui_api_key": {
+			"type": "string",
+			"description": "API key to use for Coqui. ",
+			"default": ""
+		},
+		"voice_id": {
+			"type": "string",
+			"description": "Voice ID to use. Defaults to Gracie",
+			"default": "f05c5b91-7540-4b26-b534-e820d43065d1"
+		},
+		"speed": {
+			"type": "number",
+			"description": "voice speed",
+			"default": 1.0
+		},
+		"language": {
+			"type": "string",
+			"description": "languages: en,de,fr,es,it,pt,pl",
+			"default": "en"
+		}
+	},
+	"steamshipRegistry": {
+		"tagline": null,
+		"tagline2": null,
+		"usefulFor": null,
+		"videoUrl": null,
+		"githubUrl": null,
+		"demoUrl": null,
+		"blogUrl": null,
+		"jupyterUrl": null,
+		"authorGithub": null,
+		"authorName": "mpoikkilehto",
+		"authorEmail": null,
+		"authorTwitter": null,
+		"authorUrl": null,
+		"tags": [
+			"Prompt API"
+		]
+	}
+}
