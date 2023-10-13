@@ -1,11 +1,11 @@
 {
 	"type": "plugin",
-	"handle": "coquidev",
+	"handle": "coqui-tts",
 	"version": "0.0.1",
 	"description": "",
 	"author": "mpoikkilehto",
 	"entrypoint": "Unused",
-	"public": false,
+	"public": true,
 	"plugin": {
 		"isTrainable": false,
 		"transport": "jsonOverHttp",

@@ -1,4 +1,4 @@
-# Eleven Labs Generator Plugin for Steamship
+# Coqui audio Generator Plugin for Steamship
 
 ## Developing
 
