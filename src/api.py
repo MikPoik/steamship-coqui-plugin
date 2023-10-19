@@ -93,12 +93,13 @@ class CoquiPluginConfig(Config):
   language: str = Field("en", description="languages: en,de,fr,es,it,pt,pl")
 
 
-def generate_audio_stream(input_text: str, audit_url: str,
+def generate_audio_stream(input_text: str,
                           config: CoquiPluginConfig) -> Iterator[bytes]:
   data = {
       "voice_id": config.voice_id,
       "text": input_text,
-      "language": config.language
+      "language": config.language,
+      "speed": config.speed
   }
 
   headers = {
@@ -107,7 +108,7 @@ def generate_audio_stream(input_text: str, audit_url: str,
   }
 
   url = f"https://app.coqui.ai/api/v2/samples/xtts/render/"
-  logging.debug(f"Making request to {url}")
+  #logging.debug(f"Making request to {url}")
 
   response = requests.post(url, json=data, headers=headers, stream=True)
 
@@ -143,8 +144,8 @@ class CoquiPlugin(StreamingGenerator):
     # Begin Streaming
 
     start_time = time.time()
-    _stream = generate_audio_stream(text, audit_url, self.config)
-    logging.info(f"Streaming audio into {audit_url}")
+    _stream = generate_audio_stream(text, self.config)
+    #logging.info(f"Streaming audio into {audit_url}")
     for chunk in _stream:
       try:
         block.append_stream(bytes=chunk)
