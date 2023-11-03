@@ -1,6 +1,7 @@
 src/.steamship/secrets.toml
 .steamship/secrets.toml
 
+steamship.json
 # Coverage.py
 htmlcov/
 reports/
